@@ -53,7 +53,6 @@ defmodule LightsFirmware.Mixfile do
   def deps do
     [
       {:nerves, "~> 0.7", runtime: false},
-      {:grovepi, "~> 0.5.0"}
     ] ++ deps(@target)
   end
 
