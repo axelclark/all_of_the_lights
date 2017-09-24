@@ -64,6 +64,7 @@ defmodule LightsFirmware.Mixfile do
       {:bootloader, "~> 0.1"},
       {:nerves_runtime, "~> 0.4"},
       {:nerves_network, "~> 0.3"},
+      {:lights_ui, path: "../lights_ui"},
     ] ++ system(target)
   end
 

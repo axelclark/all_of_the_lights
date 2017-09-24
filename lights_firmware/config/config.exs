@@ -32,6 +32,17 @@ config :nerves_network, :default,
     key_mgmt: String.to_atom(key_mgmt)
   ]
 
+# Configures the endpoint
+config :lights_ui, LightsUI.Web.Endpoint,
+  http: [port: 80],
+  url: [host: "localhost", port: 80],
+  secret_key_base: "iqLZYuNamd4WuTzyFeZnowKbMKSBILxRT7W5mXDqhLkMArn5YqJVGsrd5IN4TOU1",
+  root: Path.dirname(__DIR__),
+  server: true,
+  render_errors: [view: LightsUI.Web.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: LightsUI.PubSub,
+           adapter: Phoenix.PubSub.PG2]
+
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 # Uncomment to use target specific configurations
