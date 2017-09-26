@@ -1,11 +1,14 @@
 defmodule LightsUI.Application do
   use Application
 
+  alias LightsUI.Relay
+
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec
 
+    Relay.start(3)
     # Define workers and child supervisors to be supervised
     children = [
       # Start the endpoint when the application starts

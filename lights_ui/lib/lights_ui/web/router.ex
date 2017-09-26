@@ -16,6 +16,7 @@ defmodule LightsUI.Web.Router do
   scope "/", LightsUI.Web do
     pipe_through :browser # Use the default browser stack
 
+    resources "/lights", LightController, only: [:create]
     get "/", PageController, :index
   end
 
