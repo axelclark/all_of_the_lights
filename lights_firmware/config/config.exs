@@ -35,7 +35,7 @@ config :nerves_network, :default,
 # Configures the endpoint
 config :lights_ui, LightsUI.Web.Endpoint,
   http: [port: 80],
-  url: [host: "localhost", port: 80],
+  url: [host: System.get_env("NERVES_HOST"), port: 80],
   secret_key_base: "iqLZYuNamd4WuTzyFeZnowKbMKSBILxRT7W5mXDqhLkMArn5YqJVGsrd5IN4TOU1",
   root: Path.dirname(__DIR__),
   server: true,

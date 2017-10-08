@@ -54,7 +54,19 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 socket.connect()
 
 // Now that you are connected, you can join channels with a topic:
-let channel = socket.channel("topic:subtopic", {})
+let channel = socket.channel("switch:bedroom", {})
+
+let onButton = document.querySelector("#on")
+let offButton = document.querySelector("#off")
+
+onButton.addEventListener("click", event => {
+  channel.push("on", {body: "on"})
+})
+
+offButton.addEventListener("click", event => {
+  channel.push("off", {body: "off"})
+})
+
 channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })

@@ -2,7 +2,7 @@ defmodule LightsUI.Web.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", LightsUI.Web.RoomChannel
+  channel "switch:*", LightsUI.Web.SwitchChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
