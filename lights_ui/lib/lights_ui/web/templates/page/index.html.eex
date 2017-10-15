@@ -1,5 +1,5 @@
 <div class="jumbotron">
   <h2>Turn off the lights!</h2>
-    <%= link "Turn On", to: light_path(@conn, :create, %{command: "on"}), class: "btn", method: :post %>
-    <%= link "Turn Off", to: light_path(@conn, :create, %{command: "off"}), class: "btn", method: :post %>
+    <%= link "Turn On", to: light_path(@conn, :create, %{command: "on"}), class: "btn btn-primary", role: "button", method: :post %>
+    <%= link "Turn Off", to: light_path(@conn, :create, %{command: "off"}), class: "btn btn-primary", role: "button", method: :post %>
 </div>
