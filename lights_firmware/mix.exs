@@ -43,6 +43,7 @@ defmodule LightsFirmware.Mixfile do
   def deps(target) do
     [
       {:bootloader, "~> 0.1"},
+      {:nerves_firmware_ssh, "~> 0.2"},
       {:nerves_runtime, "~> 0.4"},
       {:nerves_network, "~> 0.3"},
       {:lights_ui, path: "../lights_ui"},
